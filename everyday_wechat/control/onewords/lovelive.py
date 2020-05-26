@@ -14,9 +14,10 @@ def get_lovelive_info():
     """
     print('获取土味情话...')
     try:
-        resp = requests.get('https://api.lovelive.tools/api/SweetNothings')
-        if resp.status_code == 200:
-            return resp.text
+        resp = requests.get('https://api.lovelive.tools/api/SweetNothings',timeout=5)
+        return resp.text
+        #if resp.status_code == 200:
+        #    return resp.text
         print('土味情话获取失败。')
     except requests.exceptions.RequestException as exception:
         print(exception)
